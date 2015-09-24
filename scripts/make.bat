@@ -32,12 +32,12 @@ pushd src\github.com\cloudfoundry-incubator\garden-windows\greenhouse-security-f
 popd
 
 pushd src\github.com\cloudfoundry-incubator\garden-windows\containerizer || exit /b 1
-::  call make.bat || exit /b 1
+  call make.bat || exit /b 1
 popd
 
 :: Run the tests
 
-:: ginkgo -r -noColor src/github.com/cloudfoundry-incubator/garden-windows || exit /b 1
+ginkgo -r -noColor src/github.com/cloudfoundry-incubator/garden-windows || exit /b 1
 
 pushd GardenWindowsRelease || exit /b 1
   rmdir /S /Q packages
