@@ -1,7 +1,6 @@
-# Building Diego Windows MSI
+# Building Garden Windows
 
-This document goes over the steps required to build the msi from
-source
+This document goes over the steps required to build Garden Windows from source.
 
 ## Requirements
 
