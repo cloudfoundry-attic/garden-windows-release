@@ -1,4 +1,8 @@
-﻿Configuration CFWindows {
+﻿param (
+   [switch]$quiet = $false
+)
+
+Configuration CFWindows {
   Node "localhost" {
 
     WindowsFeature IISWebServer {
@@ -148,3 +152,18 @@ Enable-PSRemoting -Force
 Install-WindowsFeature DSC-Service
 CFWindows
 Start-DscConfiguration -Wait -Path .\CFWindows -Force -Verbose
+
+if ($Error) {
+    Write-Host "Error summary:"
+    foreach($ErrorMessage in $Error)
+    {
+    Write-Host $ErrorMessage
+    }
+    if (!$quiet) {
+        Read-Host -Prompt "Setup failed. The above errors occurred. Press Enter to exit"
+    }
+} else {
+    if (!$quiet) {
+        Read-Host -Prompt "Setup completed successfully. Press Enter to exit"
+    }
+}
