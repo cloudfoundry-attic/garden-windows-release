@@ -37,6 +37,7 @@ namespace ConfigurationManager
             var optional = new List<string>
             {
                 "CONTAINER_DIRECTORY",
+                "EXTERNAL_IP",
                 "SYSLOG_HOST_IP",
                 "SYSLOG_PORT"
             };
