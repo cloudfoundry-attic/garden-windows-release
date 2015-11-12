@@ -61,7 +61,7 @@ namespace ConfigurationManager
         private void WriteParametersFile(IEnumerable<string> keys)
         {
             var parameters = new Dictionary<string, string>();
-            foreach (string key in keys.Where(x => x != "ADMIN_USERNAME"))
+            foreach (string key in keys.Where(x => x != "ADMIN_PASSWORD"))
             {
                 var value = Context.Parameters[key];
                 parameters.Add(key, value);
