@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+        "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+        "OwnerKey" = "8:_E5429DE114144198B0353157A124E74F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0FBCBAE901F64B579433173F1B518C1C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -477,6 +489,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_88B2F7E10F0483D51377C4DCC7B6B362"
+        "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88B2F7E10F0483D51377C4DCC7B6B362"
+        "OwnerKey" = "8:_E5429DE114144198B0353157A124E74F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8BD47CFF5F983069B4CB35E0B6EE6CFD"
         "OwnerKey" = "8:_0FBCBAE901F64B579433173F1B518C1C"
         "MsmSig" = "8:_UNDEFINED"
@@ -640,12 +664,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_18BD7C6968BECC4E1AA9BB19F4C6909A"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -653,6 +671,24 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E5429DE114144198B0353157A124E74F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_88B2F7E10F0483D51377C4DCC7B6B362"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1045,7 +1081,7 @@
             "Sequence" = "3:1"
             "Identifier" = "8:_3063336D_FBFB_4779_9594_83921AFDAE94"
             "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:/ADMIN_USERNAME=[ADMIN_USERNAME] /ADMIN_PASSWORD=[ADMIN_PASSWORD] /CONTAINER_DIRECTORY=[CONTAINER_DIRECTORY] /EXTERNAL_IP=[EXTERNAL_IP] /SYSLOG_HOST_IP=[SYSLOG_HOST_IP] /SYSLOG_PORT=[SYSLOG_PORT]"
+            "CustomActionData" = "8:/ADMIN_USERNAME=[ADMIN_USERNAME] /ADMIN_PASSWORD=[ADMIN_PASSWORD] /CONTAINER_DIRECTORY=[CONTAINER_DIRECTORY] /EXTERNAL_IP=[EXTERNAL_IP] /MACHINE_NAME=[MACHINE_NAME] /SYSLOG_HOST_IP=[SYSLOG_HOST_IP] /SYSLOG_PORT=[SYSLOG_PORT]"
             }
             "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_D353E50D38714156AB89823C14DFF91E"
             {
@@ -1098,6 +1134,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+                    {
+                    "Name" = "8:Utilities.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Utilities.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_137CEB8216153B0A1C5E0C6EFC999CF2"
             {
             "AssemblyRegister" = "3:1"
@@ -1789,6 +1856,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_88B2F7E10F0483D51377C4DCC7B6B362"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ServiceConfigurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_88B2F7E10F0483D51377C4DCC7B6B362"
+                    {
+                    "Name" = "8:ServiceConfigurator.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ServiceConfigurator.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8BD47CFF5F983069B4CB35E0B6EE6CFD"
             {
             "AssemblyRegister" = "3:1"
@@ -2302,7 +2400,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GardenWindows"
         "ProductCode" = "8:{48EC16D7-8B39-4939-8A31-2D79AD160966}"
-        "PackageCode" = "8:{11FF02F8-EAA6-4A21-AE8A-E34A2D9E4529}"
+        "PackageCode" = "8:{46101188-30BE-4AFB-888F-B087C8BE9F24}"
         "UpgradeCode" = "8:{67E1E56A-2A7B-437A-A661-505C42C66792}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

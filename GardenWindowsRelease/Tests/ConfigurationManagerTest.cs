@@ -10,7 +10,7 @@ namespace Tests
     {
         [Theory, AutoData]
         public void ItPersistsArgumentsInFile(
-            string adminUsername, string adminPassword, string containerDirectory, string externalIp, string syslogHostIp, string syslogPort)
+            string adminUsername, string adminPassword, string containerDirectory, string externalIp, string syslogHostIp, string syslogPort, string machineName)
         {
             var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName(), Path.GetRandomFileName());
             Directory.CreateDirectory(tempDirectory);
@@ -23,6 +23,7 @@ namespace Tests
             context.Parameters.Add("SYSLOG_HOST_IP", syslogHostIp);
             context.Parameters.Add("SYSLOG_PORT", syslogPort);
             context.Parameters.Add("assemblypath", tempDirectory);
+            context.Parameters.Add("MACHINE_NAME", machineName);
             configurationManager.Context = context;
             configurationManager.OnBeforeInstall(null);
 
@@ -34,6 +35,7 @@ namespace Tests
             Assert.Equal(hash["EXTERNAL_IP"], externalIp);
             Assert.Equal(hash["SYSLOG_HOST_IP"], syslogHostIp);
             Assert.Equal(hash["SYSLOG_PORT"], syslogPort);
+            Assert.Equal(hash["MACHINE_NAME"], machineName);
         }
     }
 }
