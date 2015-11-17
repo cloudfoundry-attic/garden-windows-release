@@ -36,7 +36,9 @@ Configuration CFWindows {
         $externalip = ([System.Net.Dns]::GetHostEntry([System.Net.Dns]::GetHostName()).AddressList | Where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).IPAddressToString
         $ifindex = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IPAddress -AND $_.IPAddress.Contains($externalip) }).Index
         $interface = (Get-WmiObject Win32_NetworkAdapter | Where { $_.DeviceID -eq $ifindex }).netconnectionid
-        Set-DnsClientServerAddress -InterfaceAlias $interface -ServerAddresses 127.0.0.1,8.8.4.4
+        $currentDNS = ((Get-DnsClientServerAddress -InterfaceAlias $interface) | where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).ServerAddresses
+        $newDNS = @("127.0.0.1") + $currentDNS
+        Set-DnsClientServerAddress -InterfaceAlias $interface -ServerAddresses ($newDNS -join ",")
       }
       GetScript = {
         $externalip = ([System.Net.Dns]::GetHostEntry([System.Net.Dns]::GetHostName()).AddressList | Where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).IPAddressToString
@@ -48,7 +50,7 @@ Configuration CFWindows {
         $externalip = ([System.Net.Dns]::GetHostEntry([System.Net.Dns]::GetHostName()).AddressList | Where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).IPAddressToString
         $ifindex = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IPAddress -AND $_.IPAddress.Contains($externalip) }).Index
         $global:interface = (Get-WmiObject Win32_NetworkAdapter | Where { $_.DeviceID -eq $ifindex }).netconnectionid
-        if(@(Compare-Object -ReferenceObject (Get-DnsClientServerAddress -InterfaceAlias $interface -AddressFamily ipv4 -ErrorAction Stop).ServerAddresses -DifferenceObject 127.0.0.1,8.8.4.4).Length -eq 0)
+        if((Get-DnsClientServerAddress -InterfaceAlias $interface -AddressFamily ipv4 -ErrorAction Stop).ServerAddresses[0] -eq "127.0.0.1")
         {
           Write-Verbose -Message "DNS Servers are set correctly."
           return $true
