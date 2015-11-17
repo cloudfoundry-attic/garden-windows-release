@@ -61,18 +61,26 @@ Configuration CFWindows {
       }
     }
 
-    Script DisableDNSCache
+    Script ClearDNSCache
     {
-      SetScript = {
-        Set-Service -Name Dnscache -StartupType Disabled
-          Stop-Service -Name Dnscache
-      }
-      GetScript = {
-        Get-Service -Name Dnscache
-      }
-      TestScript = {
-        return @(Get-Service -Name Dnscache).Status -eq "Stopped"
-      }
+        SetScript = {
+            Clear-DnsClientCache
+        }
+        GetScript = {
+            Get-DnsClientCache
+        }
+        TestScript = {
+            @(Get-DnsClientCache).Count -eq 0
+        }
+    }
+
+    Registry DisableDNSNegativeCache
+    {
+        Ensure = "Present"
+        Key = "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters"
+        ValueName = "MaxNegativeCacheTtl"
+        ValueType = "DWord"
+        ValueData = "0"
     }
 
     Script EnableDiskQuota
