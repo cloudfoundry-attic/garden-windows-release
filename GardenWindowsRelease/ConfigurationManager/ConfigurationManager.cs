@@ -31,14 +31,14 @@ namespace ConfigurationManager
             var required = new List<string>()
             {
                 "ADMIN_USERNAME",
-                "ADMIN_PASSWORD"
+                "ADMIN_PASSWORD",
+                "EXTERNAL_IP"
             };
 
             var optional = new List<string>
             {
                 "CONTAINER_DIRECTORY",
                 "MACHINE_NAME",
-                "EXTERNAL_IP",
                 "SYSLOG_HOST_IP",
                 "SYSLOG_PORT"
             };
