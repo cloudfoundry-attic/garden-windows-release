@@ -2,6 +2,8 @@
    [switch]$quiet = $false
 )
 
+$Error.Clear()
+
 Configuration CFWindows {
   Node "localhost" {
 
