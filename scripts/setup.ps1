@@ -35,23 +35,22 @@ Configuration CFWindows {
 
     Script SetupDNS {
       SetScript = {
-        $externalip = ([System.Net.Dns]::GetHostEntry([System.Net.Dns]::GetHostName()).AddressList | Where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).IPAddressToString
-        $ifindex = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IPAddress -AND $_.IPAddress.Contains($externalip) }).Index
+        $routeable_interfaces = Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IpAddress -AND ($_.IpAddress | Where { $addr = [Net.IPAddress] $_; $addr.AddressFamily -eq "InterNetwork" -AND ($addr.address -BAND ([Net.IPAddress] "255.255.0.0").address) -ne ([Net.IPAddress] "169.254.0.0").address }) }
+        $ifindex = $routeable_interfaces[0].Index
         $interface = (Get-WmiObject Win32_NetworkAdapter | Where { $_.DeviceID -eq $ifindex }).netconnectionid
+
         $currentDNS = ((Get-DnsClientServerAddress -InterfaceAlias $interface) | where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).ServerAddresses
         $newDNS = @("127.0.0.1") + $currentDNS
         Set-DnsClientServerAddress -InterfaceAlias $interface -ServerAddresses ($newDNS -join ",")
       }
       GetScript = {
-        $externalip = ([System.Net.Dns]::GetHostEntry([System.Net.Dns]::GetHostName()).AddressList | Where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).IPAddressToString
-        $ifindex = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IPAddress -AND $_.IPAddress.Contains($externalip) }).Index
-        $interface = (Get-WmiObject Win32_NetworkAdapter | Where { $_.DeviceID -eq $ifindex }).netconnectionid
-        Get-DnsClientServerAddress -AddressFamily ipv4 -InterfaceAlias $interface
+        return $false
       }
       TestScript = {
-        $externalip = ([System.Net.Dns]::GetHostEntry([System.Net.Dns]::GetHostName()).AddressList | Where { $_.AddressFamily -eq [System.Net.Sockets.AddressFamily]::InterNetwork }).IPAddressToString
-        $ifindex = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IPAddress -AND $_.IPAddress.Contains($externalip) }).Index
-        $global:interface = (Get-WmiObject Win32_NetworkAdapter | Where { $_.DeviceID -eq $ifindex }).netconnectionid
+        $routeable_interfaces = Get-WmiObject Win32_NetworkAdapterConfiguration | Where { $_.IpAddress -AND ($_.IpAddress | Where { $addr = [Net.IPAddress] $_; $addr.AddressFamily -eq "InterNetwork" -AND ($addr.address -BAND ([Net.IPAddress] "255.255.0.0").address) -ne ([Net.IPAddress] "169.254.0.0").address }) }
+        $ifindex = $routeable_interfaces[0].Index
+        $interface = (Get-WmiObject Win32_NetworkAdapter | Where { $_.DeviceID -eq $ifindex }).netconnectionid
+
         if((Get-DnsClientServerAddress -InterfaceAlias $interface -AddressFamily ipv4 -ErrorAction Stop).ServerAddresses[0] -eq "127.0.0.1")
         {
           Write-Verbose -Message "DNS Servers are set correctly."
