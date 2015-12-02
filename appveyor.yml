@@ -6,6 +6,7 @@ build_script:
 - powershell "& .\scripts\setup.ps1 -quiet"
 - powershell "& .\scripts\replace-version.ps1"
 - scripts\make.bat
+- 7z a output-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip output/*
 test: off
 artifacts:
 - path: output/*
