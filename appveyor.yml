@@ -9,8 +9,8 @@ build_script:
 - 7z a output-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip output/*
 test: off
 artifacts:
-- path: output/*
-  name: garden-windows
+- path: output-*.zip
+  name: diego-windows
 deploy:
 - provider: S3
   access_key_id: AKIAJ3M5ORCAISPRT22Q
