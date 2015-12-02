@@ -10,7 +10,7 @@ build_script:
 test: off
 artifacts:
 - path: output-*.zip
-  name: diego-windows
+  name: garden-windows
 deploy:
 - provider: S3
   access_key_id: AKIAJ3M5ORCAISPRT22Q
