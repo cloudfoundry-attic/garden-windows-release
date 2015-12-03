@@ -1,3 +1,5 @@
+@echo on
+
 rmdir /S /Q output
 mkdir output
 SET GOBIN=%CD%\bin
