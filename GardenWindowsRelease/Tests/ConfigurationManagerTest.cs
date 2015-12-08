@@ -31,7 +31,7 @@ namespace Tests
     {
         [Theory, AutoData]
         public void ItPersistsArgumentsInFile(
-            string adminUsername, string adminPassword, string containerDirectory, string externalIp, string syslogHostIp, string syslogPort, string machineName)
+            string adminUsername, string adminPassword, string containerDirectory, string machineIp, string syslogHostIp, string syslogPort, string machineName)
         {
             using(var tempDirectory = new TempDirectory())
             {
@@ -40,7 +40,7 @@ namespace Tests
                 context.Parameters.Add("ADMIN_USERNAME", adminUsername);
                 context.Parameters.Add("ADMIN_PASSWORD", adminPassword);
                 context.Parameters.Add("CONTAINER_DIRECTORY", containerDirectory);
-                context.Parameters.Add("EXTERNAL_IP", externalIp);
+                context.Parameters.Add("MACHINE_IP", machineIp);
                 context.Parameters.Add("SYSLOG_HOST_IP", syslogHostIp);
                 context.Parameters.Add("SYSLOG_PORT", syslogPort);
                 context.Parameters.Add("assemblypath", tempDirectory.ToString());
@@ -53,7 +53,7 @@ namespace Tests
                 var hash = javaScriptSerializer.Deserialize<Dictionary<string, string>>(jsonString);
                 Assert.False(hash.ContainsKey("ADMIN_PASSWORD"));
                 Assert.Equal(hash["CONTAINER_DIRECTORY"], containerDirectory);
-                Assert.Equal(hash["EXTERNAL_IP"], externalIp);
+                Assert.Equal(hash["MACHINE_IP"], machineIp);
                 Assert.Equal(hash["SYSLOG_HOST_IP"], syslogHostIp);
                 Assert.Equal(hash["SYSLOG_PORT"], syslogPort);
                 Assert.Equal(hash["MACHINE_NAME"], machineName);

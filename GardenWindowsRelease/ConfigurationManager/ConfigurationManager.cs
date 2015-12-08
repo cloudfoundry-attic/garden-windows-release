@@ -32,7 +32,7 @@ namespace ConfigurationManager
             {
                 "ADMIN_USERNAME",
                 "ADMIN_PASSWORD",
-                "EXTERNAL_IP"
+                "MACHINE_IP"
             };
 
             var optional = new List<string>

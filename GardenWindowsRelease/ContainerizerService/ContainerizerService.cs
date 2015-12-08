@@ -30,13 +30,13 @@ namespace ContainerizerService
 
         protected override void OnStart(string[] args)
         {
-            var externalIp = Config.Params()["EXTERNAL_IP"];
+            var machineIp = Config.Params()["MACHINE_IP"];
             var syslog = Syslog.Build(Config.Params(), eventSource);
 
             string containerDirectory;
             Config.Params().TryGetValue("CONTAINER_DIRECTORY", out containerDirectory);
 
-            var startArguments = " --externalIp " + externalIp + " --port 1788 ";
+            var startArguments = " --machineIp " + machineIp + " --port 1788 ";
 
             if (!string.IsNullOrWhiteSpace(containerDirectory))
             {
