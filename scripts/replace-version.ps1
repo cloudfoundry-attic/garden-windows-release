@@ -9,5 +9,7 @@ push-location $dir
   $productcode = """ProductCode"" = ""8:{$productcode}"""
   $oldpackagecode = """PackageCode"" = ""8:{11FF02F8-EAA6-4A21-AE8A-E34A2D9E4529}"""
   $packagecode = """PackageCode"" = ""8:{$packagecode}"""
-  (get-content ..\GardenWindowsRelease\GardenWindowsMSI\GardenWindowsMSI.vdproj).replace("$oldversion","$version").replace("$oldproductcode", "$productcode").replace("$oldpackagecode", "$packagecode") | set-content ..\GardenWindowsRelease\GardenWindowsMSI\GardenWindowsMSI.vdproj
+  $oldsubject = """Subject"" = ""8:"""
+  $subject = """Subject"" = ""8:GardenWindows-$env:APPVEYOR_BUILD_VERSION-$env:APPVEYOR_REPO_COMMIT"""
+  (get-content ..\GardenWindowsRelease\GardenWindowsMSI\GardenWindowsMSI.vdproj).replace("$oldversion","$version").replace("$oldproductcode", "$productcode").replace("$oldpackagecode", "$packagecode").replace("$oldsubject", "$subject") | set-content ..\GardenWindowsRelease\GardenWindowsMSI\GardenWindowsMSI.vdproj
 pop-location
