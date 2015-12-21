@@ -4,7 +4,7 @@ $scriptpath = $MyInvocation.MyCommand.Path
 $dir = Split-Path $scriptpath
 push-location $dir
   $oldversion = """ProductVersion"" = ""8:1.0.0"""
-  $version = """ProductVersion"" = ""8:$env:APPVEYOR_BUILD_VERSION"""
+  $version = """ProductVersion"" = ""8:0.$env:APPVEYOR_BUILD_VERSION"""
   $oldproductcode = """ProductCode"" = ""8:{48EC16D7-8B39-4939-8A31-2D79AD160966}"""
   $productcode = """ProductCode"" = ""8:{$productcode}"""
   $oldpackagecode = """PackageCode"" = ""8:{11FF02F8-EAA6-4A21-AE8A-E34A2D9E4529}"""
