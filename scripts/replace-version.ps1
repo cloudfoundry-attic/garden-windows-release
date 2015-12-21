@@ -12,4 +12,5 @@ push-location $dir
   $oldsubject = """Subject"" = ""8:"""
   $subject = """Subject"" = ""8:GardenWindows-$env:APPVEYOR_BUILD_VERSION-$env:APPVEYOR_REPO_COMMIT"""
   (get-content ..\GardenWindowsRelease\GardenWindowsMSI\GardenWindowsMSI.vdproj).replace("$oldversion","$version").replace("$oldproductcode", "$productcode").replace("$oldpackagecode", "$packagecode").replace("$oldsubject", "$subject") | set-content ..\GardenWindowsRelease\GardenWindowsMSI\GardenWindowsMSI.vdproj
+  (get-content .\setup.ps1).replace("Version 0.0.0","Version $env:APPVEYOR_BUILD_VERSION") | set-content .\setup.ps1
 pop-location

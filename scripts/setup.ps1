@@ -1,6 +1,12 @@
 ﻿param (
-   [switch]$quiet = $false
+   [switch]$quiet = $false,
+   [switch]$version = $false
 )
+
+if ($version) {
+    Write-Host "Version 0.0.0"
+    exit
+}
 
 $Error.Clear()
 
