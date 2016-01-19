@@ -1,6 +1,6 @@
-[submodule "src/github.com/cloudfoundry-incubator/garden-windows"]
-	path = src/github.com/cloudfoundry-incubator/garden-windows
-	url = https://github.com/cloudfoundry-incubator/garden-windows
+[submodule "src/github.com/cloudfoundry/garden-windows"]
+	path = src/github.com/cloudfoundry/garden-windows
+  url = https://github.com/cloudfoundry/garden-windows
 [submodule "src/github.com/cloudfoundry-incubator/cf-lager"]
 	path = src/github.com/cloudfoundry-incubator/cf-lager
 	url = https://github.com/cloudfoundry-incubator/cf-lager
