@@ -29,10 +29,6 @@ SET GOBIN=%CD%\GardenWindowsRelease\GardenWindowsMSI\go-executables
 :: Install garden-windows to the MSI go-executables directory
 go install github.com/cloudfoundry/garden-windows || exit /b 1
 
-pushd src\github.com\cloudfoundry\garden-windows\greenhouse-security-fixtures || exit /b 1
-  call make.bat || exit /b 1
-popd
-
 pushd src\github.com\cloudfoundry\garden-windows\containerizer || exit /b 1
   call make.bat || exit /b 1
 popd
