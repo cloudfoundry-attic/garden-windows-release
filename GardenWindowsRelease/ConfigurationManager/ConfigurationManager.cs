@@ -60,6 +60,12 @@ namespace ConfigurationManager
             WriteParametersFile(keys);
         }
 
+        protected override void OnBeforeUninstall(IDictionary savedState)
+        {
+            File.Delete(DestinationFilename("parameters.json"));
+            base.OnBeforeUninstall(savedState);
+        }
+
         private void WriteParametersFile(IEnumerable<string> keys)
         {
             var parameters = new Dictionary<string, string>();
