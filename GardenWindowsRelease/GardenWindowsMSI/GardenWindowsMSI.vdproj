@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+        "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+        "OwnerKey" = "8:_E5429DE114144198B0353157A124E74F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0FBCBAE901F64B579433173F1B518C1C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -101,6 +113,12 @@
         {
         "MsmKey" = "8:_229005EBBA5FB9F1869D6AEF012F9865"
         "OwnerKey" = "8:_FF06B954128921B77C303E7922BA915F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_30B1BD7A14614686BDBB94B9B9C9B622"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -305,6 +323,18 @@
         {
         "MsmKey" = "8:_8830AD1EDF9A1434D8B46EEC17FDB760"
         "OwnerKey" = "8:_0FBCBAE901F64B579433173F1B518C1C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88B2F7E10F0483D51377C4DCC7B6B362"
+        "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88B2F7E10F0483D51377C4DCC7B6B362"
+        "OwnerKey" = "8:_E5429DE114144198B0353157A124E74F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -597,6 +627,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F31F2AC2CBC34DEFB0FAFB38455370BB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FF06B954128921B77C303E7922BA915F"
         "OwnerKey" = "8:_5176018CA00484AC78BBA501A891FB37"
         "MsmSig" = "8:_UNDEFINED"
@@ -647,6 +683,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4314FBAEBE8249B9B3762A23F939FF83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_88B2F7E10F0483D51377C4DCC7B6B362"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1088,6 +1136,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0AD4DD0061D3F1DE348211ADE4B2CD6F"
+                    {
+                    "Name" = "8:Utilities.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Utilities.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_187EF9619F8816554025C46002087119"
             {
             "AssemblyRegister" = "3:1"
@@ -1179,6 +1258,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_30B1BD7A14614686BDBB94B9B9C9B622"
+            {
+            "SourcePath" = "8:..\\..\\src\\github.com\\cloudfoundry\\garden-windows\\Containerizer\\Containerizer\\Resources\\zlib1.dll"
+            "TargetName" = "8:zlib1.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_360BD414412F94043EEA915A4A16D6EA"
@@ -1638,6 +1737,37 @@
                     }
                 }
             "SourcePath" = "8:IronFrame.Shared.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_88B2F7E10F0483D51377C4DCC7B6B362"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ServiceConfigurator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_88B2F7E10F0483D51377C4DCC7B6B362"
+                    {
+                    "Name" = "8:ServiceConfigurator.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ServiceConfigurator.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
@@ -2118,6 +2248,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F31F2AC2CBC34DEFB0FAFB38455370BB"
+            {
+            "SourcePath" = "8:..\\..\\src\\github.com\\cloudfoundry\\garden-windows\\Containerizer\\Containerizer\\Resources\\bsdtar.exe"
+            "TargetName" = "8:tar.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FF06B954128921B77C303E7922BA915F"
