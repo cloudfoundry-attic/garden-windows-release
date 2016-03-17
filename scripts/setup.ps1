@@ -165,7 +165,9 @@ if($PSVersionTable.PSVersion.Major -lt 4) {
   exit(-1)
 }
 
-Enable-PSRemoting -Force
+if (![bool](Test-WSMan -ErrorAction SilentlyContinue)) {
+  Enable-PSRemoting -Force
+}
 Install-WindowsFeature DSC-Service
 CFWindows
 Start-DscConfiguration -Wait -Path .\CFWindows -Force -Verbose
