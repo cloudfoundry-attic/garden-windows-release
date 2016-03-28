@@ -30,8 +30,6 @@ namespace ConfigurationManager
 
             var required = new List<string>()
             {
-                "ADMIN_USERNAME",
-                "ADMIN_PASSWORD",
                 "MACHINE_IP"
             };
 
@@ -69,7 +67,7 @@ namespace ConfigurationManager
         private void WriteParametersFile(IEnumerable<string> keys)
         {
             var parameters = new Dictionary<string, string>();
-            foreach (string key in keys.Where(x => x != "ADMIN_PASSWORD"))
+            foreach (string key in keys)
             {
                 var value = Context.Parameters[key];
                 parameters.Add(key, value);

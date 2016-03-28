@@ -31,14 +31,12 @@ namespace Tests
     {
         [Theory, AutoData]
         public void ItPersistsArgumentsInFile(
-            string adminUsername, string adminPassword, string containerDirectory, string machineIp, string syslogHostIp, string syslogPort, string machineName)
+            string containerDirectory, string machineIp, string syslogHostIp, string syslogPort, string machineName)
         {
             using(var tempDirectory = new TempDirectory())
             {
                 var configurationManager = new ConfigurationManagerTest();
                 var context = new InstallContext();
-                context.Parameters.Add("ADMIN_USERNAME", adminUsername);
-                context.Parameters.Add("ADMIN_PASSWORD", adminPassword);
                 context.Parameters.Add("CONTAINER_DIRECTORY", containerDirectory);
                 context.Parameters.Add("MACHINE_IP", machineIp);
                 context.Parameters.Add("SYSLOG_HOST_IP", syslogHostIp);
@@ -51,7 +49,6 @@ namespace Tests
                 var javaScriptSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                 var jsonString = File.ReadAllText(Path.Combine(tempDirectory.ToString(), @"..\parameters.json"));
                 var hash = javaScriptSerializer.Deserialize<Dictionary<string, string>>(jsonString);
-                Assert.False(hash.ContainsKey("ADMIN_PASSWORD"));
                 Assert.Equal(hash["CONTAINER_DIRECTORY"], containerDirectory);
                 Assert.Equal(hash["MACHINE_IP"], machineIp);
                 Assert.Equal(hash["SYSLOG_HOST_IP"], syslogHostIp);
