@@ -29,3 +29,4 @@ branches:
   only:
   - master
   - /appveyor/
+  - lts
