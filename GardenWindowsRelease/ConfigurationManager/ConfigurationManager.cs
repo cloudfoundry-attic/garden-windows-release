@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Utilities;
 
 namespace ConfigurationManager
 {
@@ -60,12 +61,16 @@ namespace ConfigurationManager
 
         protected override void OnBeforeUninstall(IDictionary savedState)
         {
-            File.Delete(DestinationFilename("parameters.json"));
+            Directory.Delete(Destination(), true);
             base.OnBeforeUninstall(savedState);
         }
 
         private void WriteParametersFile(IEnumerable<string> keys)
         {
+            if (!Directory.Exists(Destination()))
+            {
+                Directory.CreateDirectory(Destination());
+            }
             var parameters = new Dictionary<string, string>();
             foreach (string key in keys)
             {
@@ -78,9 +83,9 @@ namespace ConfigurationManager
             File.WriteAllText(configFile, jsonString);
         }
 
-        private string Destination()
+        protected virtual string Destination()
         {
-            return Path.GetFullPath(Path.Combine(Context.Parameters["assemblypath"], ".."));
+            return Config.ConfigDir();
         }
 
         private string DestinationFilename(string path)
