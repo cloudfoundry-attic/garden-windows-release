@@ -91,6 +91,10 @@
       <Project>{47a78ac3-d749-46e2-b7b6-a7dc1a8c2b70}</Project>
       <Name>ConfigurationManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{5bf61f53-923f-46c5-b160-d503b08b9b5a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
