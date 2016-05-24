@@ -1,7 +1,9 @@
 @echo on
 
 rmdir /S /Q output
+rmdir /S /Q bosh-executables
 mkdir output
+mkdir bosh-executables
 SET GOBIN=%CD%\bin
 SET DEVENV_PATH=%programfiles(x86)%\Microsoft Visual Studio 12.0\Common7\IDE
 SET PATH=%GOBIN%;%GOROOT%;%PATH%;%DEVENV_PATH%
@@ -29,13 +31,16 @@ SET GOBIN=%CD%\GardenWindowsRelease\GardenWindowsMSI\go-executables
 :: Install garden-windows to the MSI go-executables directory
 go install github.com/cloudfoundry/garden-windows || exit /b 1
 
-pushd src\github.com\cloudfoundry\garden-windows\containerizer || exit /b 1
+pushd src\github.com\cloudfoundry\garden-windows\Containerizer || exit /b 1
   call make.bat || exit /b 1
 popd
 
-:: Run the tests
+pushd src\github.com\cloudfoundry\garden-windows || exit /b 1
+  ginkgo -r -noColor || exit /b 1
+  go build -o output\garden-windows.exe || exit /b 1
+popd
 
-ginkgo -r -noColor src/github.com/cloudfoundry/garden-windows || exit /b 1
+robocopy src\github.com\cloudfoundry\garden-windows\output bosh-executables ^& IF %ERRORLEVEL% LEQ 1 exit 0
 
 pushd GardenWindowsRelease || exit /b 1
   rmdir /S /Q packages

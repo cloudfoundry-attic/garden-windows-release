@@ -9,10 +9,13 @@ build_script:
 - set GOROOT=C:\go14
 - scripts\make.bat
 - 7z a output-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip output/*
+- 7z a bosh-executables-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip bosh-executables/*
 test: off
 artifacts:
 - path: output-*.zip
   name: garden-windows
+- path: bosh-executables-*.zip
+  name: bosh-executables
 deploy:
 - provider: S3
   access_key_id: AKIAJ3M5ORCAISPRT22Q
@@ -21,6 +24,16 @@ deploy:
   region: us-east-1
   bucket: garden-windows-release
   artifact: garden-windows
+  set_public: true
+  on:
+    branch: master
+- provider: S3
+  access_key_id: AKIAJ3M5ORCAISPRT22Q
+  secret_access_key:
+    secure: lMbaCusTBxZpIbSzoILyHMBkz+sVH7EwgAqI3sAVYAM92OcIzlzq1IzcB8MmnRvZ
+  region: us-east-1
+  bucket: garden-windows-bosh-artifacts
+  artifact: bosh-executables
   set_public: true
   on:
     branch: master
