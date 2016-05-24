@@ -40,7 +40,7 @@ pushd src\github.com\cloudfoundry\garden-windows || exit /b 1
   go build -o output\garden-windows.exe || exit /b 1
 popd
 
-robocopy src\github.com\cloudfoundry\garden-windows\output bosh-executables ^& IF %ERRORLEVEL% LEQ 1 exit 0
+robocopy src\github.com\cloudfoundry\garden-windows\output bosh-executables
 
 pushd GardenWindowsRelease || exit /b 1
   rmdir /S /Q packages
