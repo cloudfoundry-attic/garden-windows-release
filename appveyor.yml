@@ -1,12 +1,16 @@
 version: 0.{build}
 skip_tags: true
 cache: C:\Users\appveyor\AppData\Local\NuGet\Cache
+install:
+  - echo %PATH%
+  - echo %GOPATH%
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - go version
+  - go env
 build_script:
 - git submodule update --init --recursive
 - powershell "& .\scripts\setup.ps1 -quiet"
 - powershell "& .\scripts\replace-version.ps1"
-- set PATH=C:\go14\bin;%PATH%
-- set GOROOT=C:\go14
 - scripts\make.bat
 - 7z a output-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip output/*
 - 7z a bosh-executables-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip bosh-executables/*

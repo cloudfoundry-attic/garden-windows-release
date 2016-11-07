@@ -5,7 +5,7 @@ This document goes over the steps required to build Garden Windows from source.
 ## Requirements
 
 - Windows Server 2012 R2 Standard
-- Go 1.4 (tested with version go1.4.2 windows/amd64)
+- Go 1.7
 - Visual Studio 2013
 - [Visual Studio Installer Projects Extension](http://bit.ly/1xVRNhI)
 - Access to the internet (specifically to google.com and 8.8.8.8 for outbound port integration tests)
