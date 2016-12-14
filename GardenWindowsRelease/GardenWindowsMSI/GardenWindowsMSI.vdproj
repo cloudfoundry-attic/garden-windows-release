@@ -1262,7 +1262,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_30B1BD7A14614686BDBB94B9B9C9B622"
             {
-            "SourcePath" = "8:..\\..\\src\\github.com\\cloudfoundry\\garden-windows\\Containerizer\\Containerizer\\Resources\\zlib1.dll"
+            "SourcePath" = "8:..\\..\\src\\code.cloudfoundry.org\\garden-windows\\Containerizer\\Containerizer\\Resources\\zlib1.dll"
             "TargetName" = "8:zlib1.dll"
             "Tag" = "8:"
             "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
@@ -2252,7 +2252,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F31F2AC2CBC34DEFB0FAFB38455370BB"
             {
-            "SourcePath" = "8:..\\..\\src\\github.com\\cloudfoundry\\garden-windows\\Containerizer\\Containerizer\\Resources\\bsdtar.exe"
+            "SourcePath" = "8:..\\..\\src\\code.cloudfoundry.org\\garden-windows\\Containerizer\\Containerizer\\Resources\\bsdtar.exe"
             "TargetName" = "8:tar.exe"
             "Tag" = "8:"
             "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
@@ -2929,7 +2929,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0FBCBAE901F64B579433173F1B518C1C"
             {
-            "SourcePath" = "8:..\\..\\src\\github.com\\cloudfoundry\\garden-windows\\containerizer\\Containerizer\\obj\\Debug\\Containerizer.exe"
+            "SourcePath" = "8:..\\..\\src\\code.cloudfoundry.org\\garden-windows\\containerizer\\Containerizer\\obj\\Debug\\Containerizer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"
@@ -3013,7 +3013,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A7300D2CF5FB45F8A8C5F6136672F546"
             {
-            "SourcePath" = "8:..\\..\\src\\github.com\\cloudfoundry\\garden-windows\\containerizer\\Logger\\obj\\Debug\\Logger.dll"
+            "SourcePath" = "8:..\\..\\src\\code.cloudfoundry.org\\garden-windows\\containerizer\\Logger\\obj\\Debug\\Logger.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ACA42DBD8EC64991ABB3254FB6DDBC0A"

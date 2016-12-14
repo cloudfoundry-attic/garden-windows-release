@@ -8,7 +8,7 @@ SET GOBIN=%CD%\bin
 SET DEVENV_PATH=%programfiles(x86)%\Microsoft Visual Studio 12.0\Common7\IDE
 SET PATH=%GOBIN%;%GOROOT%;%PATH%;%DEVENV_PATH%
 SET GOPATH=%CD%
-SET CONTAINERIZER_BIN=%CD%\src\\github.com\cloudfoundry\garden-windows\containerizer\Containerizer\bin\Containerizer.exe
+SET CONTAINERIZER_BIN=%CD%\src\\code.cloudfoundry.org\garden-windows\containerizer\Containerizer\bin\Containerizer.exe
 
 for /f "tokens=*" %%a in ('git rev-parse HEAD') do (
     set VERSION=%%a
@@ -29,18 +29,18 @@ go install github.com/onsi/gomega || exit /b 1
 SET GOBIN=%CD%\GardenWindowsRelease\GardenWindowsMSI\go-executables
 
 :: Install garden-windows to the MSI go-executables directory
-go install github.com/cloudfoundry/garden-windows || exit /b 1
+go install code.cloudfoundry.org/garden-windows || exit /b 1
 
-pushd src\github.com\cloudfoundry\garden-windows\Containerizer || exit /b 1
+pushd src\code.cloudfoundry.org\garden-windows\Containerizer || exit /b 1
   call make.bat || exit /b 1
 popd
 
-pushd src\github.com\cloudfoundry\garden-windows || exit /b 1
+pushd src\code.cloudfoundry.org\garden-windows || exit /b 1
   ginkgo -r -noColor || exit /b 1
   go build -o output\garden-windows.exe || exit /b 1
 popd
 
-robocopy src\github.com\cloudfoundry\garden-windows\output bosh-executables
+robocopy src\code.cloudfoundry.org\garden-windows\output bosh-executables
 
 pushd GardenWindowsRelease || exit /b 1
   rmdir /S /Q packages
