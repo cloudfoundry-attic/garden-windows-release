@@ -61,3 +61,9 @@
 [submodule "src/code.cloudfoundry.org/garden-windows"]
 	path = src/code.cloudfoundry.org/garden-windows
 	url = https://github.com/cloudfoundry/garden-windows
+[submodule "src/gopkg.in/yaml.v2"]
+	path = src/gopkg.in/yaml.v2
+	url = https://gopkg.in/yaml.v2
+[submodule "src/github.com/golang/protobuf"]
+	path = src/github.com/golang/protobuf
+	url = https://github.com/golang/protobuf
