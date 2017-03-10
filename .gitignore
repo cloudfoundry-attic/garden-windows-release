@@ -62,5 +62,6 @@ src/github.com/codegangsta/cli
 
 # CATS for locally running tests
 src/github.com/cloudfoundry/cf-acceptance-tests/
+src/github.com/cloudfoundry/cf-acceptance-tests/cats_suite_helpers
 
 tags
