@@ -135,9 +135,10 @@ Configuration CFWindows {
         $adminsSid = $admins.Translate([System.Security.Principal.SecurityIdentifier])
 
         $LocalUser = "D:(A;;CC;;;$adminsSid)"
-        $otherAdmins = Get-WmiObject win32_groupuser | 
-          Where-Object { $_.GroupComponent -match 'administrators' } |
-          ForEach-Object { [wmi]$_.PartComponent }
+        $adminGroup = (get-wmiobject win32_group -Filter "LocalAccount=True AND SID='S-1-5-32-544'")
+        $query = "GroupComponent='Win32_Group.Domain=`"$($adminGroup.Domain)`",NAME=`"$($adminGroup.Name)`"'"
+        $otherAdmins = Get-WmiObject win32_groupuser -Filter $query | 
+	          ForEach-Object { [wmi]$_.PartComponent }
 
         foreach($admin in $otherAdmins)
         {
