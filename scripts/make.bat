@@ -39,7 +39,6 @@ pushd src\code.cloudfoundry.org\garden-windows || exit /b 1
   ginkgo -r -noColor || exit /b 1
   go build -o output\garden-windows.exe || exit /b 1
 popd
-
 robocopy src\code.cloudfoundry.org\garden-windows\output bosh-executables
 
 pushd GardenWindowsRelease || exit /b 1
