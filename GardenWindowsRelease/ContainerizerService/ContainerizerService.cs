@@ -36,7 +36,7 @@ namespace ContainerizerService
             string containerDirectory;
             Config.Params().TryGetValue("CONTAINER_DIRECTORY", out containerDirectory);
 
-            var startArguments = " --machineIp " + machineIp + " --port 1788 ";
+            var startArguments = " --machineIp " + machineIp + " --port 1788 --activeProcessLimit 20 ";
 
             if (!string.IsNullOrWhiteSpace(containerDirectory))
             {
