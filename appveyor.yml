@@ -1,3 +1,7 @@
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 version: 0.{build}
 skip_tags: true
 cache: C:\Users\appveyor\AppData\Local\NuGet\Cache
@@ -8,7 +12,9 @@ install:
   - go version
   - go env
 build_script:
+- powershell -Command "echo started"
 - git submodule update --init --recursive
+- powershell -Command "echo hello"
 - powershell "& .\scripts\setup.ps1 -quiet"
 - powershell "& .\scripts\replace-version.ps1"
 - scripts\make.bat
@@ -46,7 +52,3 @@ branches:
   only:
   - master
   - /appveyor/
-init:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-on_finish:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
