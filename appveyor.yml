@@ -5,49 +5,7 @@ on_finish:
 version: 0.{build}
 skip_tags: true
 cache: C:\Users\appveyor\AppData\Local\NuGet\Cache
-install:
-  - echo %PATH%
-  - echo %GOPATH%
-  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
-  - go version
-  - go env
-build_script:
-- powershell -Command "echo started"
-- git submodule update --init --recursive
-- powershell -Command "echo hello"
-- powershell "& .\scripts\setup.ps1 -quiet"
-- powershell "& .\scripts\replace-version.ps1"
-- scripts\make.bat
-- 7z a output-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip output/*
-- 7z a bosh-executables-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip bosh-executables/*
 test: off
-artifacts:
-- path: output-*.zip
-  name: garden-windows
-- path: bosh-executables-*.zip
-  name: bosh-executables
-deploy:
-- provider: S3
-  access_key_id: AKIAI2AAY3LUVTHYDTDA
-  secret_access_key:
-    secure: zNBMp5HGSOJLlSY+lBKwgWH5eE71tYCWST8QQjXO+IwIE2pDeI/uv5Nm0iBwob4K
-  region: us-east-1
-  bucket: build-garden-windows-release
-  artifact: garden-windows
-  set_public: true
-  on:
-    branch: master
-- provider: S3
-  access_key_id: AKIAI2AAY3LUVTHYDTDA
-  secret_access_key:
-    secure: zNBMp5HGSOJLlSY+lBKwgWH5eE71tYCWST8QQjXO+IwIE2pDeI/uv5Nm0iBwob4K
-  region: us-east-1
-  bucket: build-garden-windows-bosh-artifacts
-  artifact: bosh-executables
-  set_public: true
-  on:
-    branch: master
-clone_folder: c:\garden-windows-release
 branches:
   only:
   - master
