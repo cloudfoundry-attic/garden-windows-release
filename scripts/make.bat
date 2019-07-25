@@ -5,7 +5,7 @@ rmdir /S /Q bosh-executables
 mkdir output
 mkdir bosh-executables
 SET GOBIN=%CD%\bin
-SET DEVENV_PATH=%programfiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE
+SET DEVENV_PATH=%programfiles(x86)%\Microsoft Visual Studio 12.0\Common7\IDE
 SET PATH=%GOBIN%;%GOROOT%;%PATH%;%DEVENV_PATH%
 SET GOPATH=%CD%
 SET CONTAINERIZER_BIN=%CD%\src\\code.cloudfoundry.org\garden-windows\containerizer\Containerizer\bin\Containerizer.exe
