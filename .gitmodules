@@ -67,6 +67,3 @@
 [submodule "src/github.com/golang/protobuf"]
 	path = src/github.com/golang/protobuf
 	url = https://github.com/golang/protobuf
-[submodule "src/golang.org/x/text"]
-	path = src/golang.org/x/text
-	url = https://golang.org/x/text
