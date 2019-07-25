@@ -4,7 +4,7 @@ cache: C:\Users\appveyor\AppData\Local\NuGet\Cache
 install:
   - echo %PATH%
   - echo %GOPATH%
-  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - set PATH=%GOPATH%\bin;c:\go112\bin;%PATH%
   - go version
   - go env
 build_script:
