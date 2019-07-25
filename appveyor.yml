@@ -1,6 +1,7 @@
 version: 0.{build}
 skip_tags: true
 cache: C:\Users\appveyor\AppData\Local\NuGet\Cache
+image: Visual Studio 2017
 install:
   - echo %PATH%
   - echo %GOPATH%
