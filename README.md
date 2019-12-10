@@ -2,8 +2,8 @@
 
 # garden-windows-release
 
-This repo contains submodules with all of the source requirements to run Garden
-Windows. After an install all of the necessary programs (containerizer,
+This repo contains submodules with all of the source requirements to run [Garden
+Windows](https://github.com/cloudfoundry/garden-windows). After an install all of the necessary programs (containerizer,
 garden-windows) will be running as services.
 
 ## Building the MSI
